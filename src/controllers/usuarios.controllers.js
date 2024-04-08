@@ -75,6 +75,7 @@ export const login = async (req,res) => {
 export const leerUsuarios = async (req, res) =>{
   try{
       const listaDeUsuarios = await Usuario.find();
+      console.log(listaDeUsuarios);
       res.status(200).json(listaDeUsuarios);
   }catch(error){
       console.log(error);
