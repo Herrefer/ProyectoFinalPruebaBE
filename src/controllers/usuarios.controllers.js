@@ -74,13 +74,12 @@ export const login = async (req,res) => {
 
 export const leerUsuarios = async (req, res) =>{
   try{
-      const listaDeUsuarios = await Usuario.find();
-      console.log(listaDeUsuarios);
-      res.status(200).json(listaDeUsuarios);
+      const listaUsuarios = await Usuario.find();
+      res.status(200).json(listaUsuarios);
   }catch(error){
-      console.log(error);
-      res.status(404).json({
-          mensaje: "No se pudo conseguir la lista de usuarios"
-      })
-  }
+    console.error(error);
+    res.status(404).json({
+      mensaje: "Hubo un error en la solicitud"
+    });
+}
 }
