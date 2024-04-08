@@ -71,3 +71,15 @@ export const login = async (req,res) => {
     });
   }
 }
+
+export const leerUsuarios = async (req, res) =>{
+  try{
+      const listaDeUsuarios = await Usuario.find();
+      res.status(200).json(listaDeUsuarios);
+  }catch(error){
+      console.log(error);
+      res.status(404).json({
+          mensaje: "No se pudo conseguir la lista de usuarios"
+      })
+  }
+}
