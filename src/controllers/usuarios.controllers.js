@@ -20,7 +20,7 @@ export const crearUsuario = async (req, res) => {
           rol: "Usuario",
         });
         crearUsuario.save();
-        res.status(200).json({
+        res.status(201).json({
           mensaje: 'Usuario creado correctamente.',
           Usuario: crearUsuario,
         });
