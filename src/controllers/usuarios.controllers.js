@@ -86,4 +86,3 @@ export const leerUsuarios = async (req, res) =>{
     });
 }
 }
-
