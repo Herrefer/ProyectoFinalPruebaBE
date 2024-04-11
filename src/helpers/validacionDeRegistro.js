@@ -25,9 +25,7 @@ const validacionRegistro = [
     ),
     check("rol")
     .notEmpty()
-    .withMessage("El rol del usuario es obligatorio")
-    .matches("Usuario")
-    .withMessage("El rol debe ser Usuario"),
+    .withMessage("El rol del usuario es obligatorio"),
   (req, res, next) => {
     resultadoValidacion(req, res, next);
   },
