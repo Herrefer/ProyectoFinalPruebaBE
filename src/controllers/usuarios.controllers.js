@@ -55,17 +55,9 @@ export const login = async (req, res) => {
       });
     }
 
-    const token = await generarJWT(
-      usuarioBuscado._id,
-      usuarioBuscado.correo,
-      usuarioBuscado.rol,
-      usuarioBuscado.nombreCompleto
-    );
-
     res.status(200).json({
       mensaje: "Los datos del usuario son correctos",
       correo: correo,
-      token: token,
     });
   } catch (error) {
     console.error(error);
