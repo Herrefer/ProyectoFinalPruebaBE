@@ -1,12 +1,14 @@
 import { Router } from 'express';
-import { crearUsuario, login } from '../controllers/usuarios.controllers.js';
-import validacionRegistro from '../helpers/validacionDeRegistro.js';
-import validacionLogin from '../helpers/validacionDeLogin.js';
-
+import {
+  listarProductos,
+  obtenerProducto,
+  crearProducto,
+  borrarProducto,
+} from '../controllers/productos.controllers.js';
 
 const enrutador = Router();
 
-enrutador.route('/registro').post([validacionRegistro],crearUsuario);
-enrutador.route('/login').post([validacionLogin],login);
+enrutador.route('/productos').get(listarProductos).post(crearProducto);
+enrutador.route('/producto/:id').get(obtenerProducto).delete(borrarProducto);
 
 export default enrutador;
