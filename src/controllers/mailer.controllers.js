@@ -1,7 +1,7 @@
 import transporter from "../helpers/mailer.js";
 
 export const enviarCorreo = async (req, res) => {
-    const {correo} = req.params
+    const {correo} = req.body
     try {
      const resultado = await transporter.sendMail({
         from: `AmbienteBohemio ${process.env.EMAIL}`,
@@ -16,5 +16,8 @@ export const enviarCorreo = async (req, res) => {
       })
     } catch (error) {
       console.log(error);
+      res.status(400).json({
+        message : "Hubo un error en la solicitud"
+      })
     }
   };

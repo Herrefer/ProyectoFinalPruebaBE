@@ -3,7 +3,7 @@ import { enviarCorreo } from "../controllers/mailer.controllers.js";
 
 const enrutador = Router();
 
-enrutador.route('/mailer/:correo').post(enviarCorreo)
+enrutador.route('/mailer').post(enviarCorreo)
 
 
 export default enrutador;
