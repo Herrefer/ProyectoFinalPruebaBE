@@ -4,15 +4,13 @@ import Handlebars from "handlebars";
 import { readFileSync } from "fs";
 import { fileURLToPath } from "url";
 import path from "path";
+import { __dirname } from "../../index.js";
 
 export const enviarCorreo = async (req, res) => {
-  const __filename = fileURLToPath(import.meta.url);
-  console.log(__filename);
-  const __dirname = path.dirname(__filename);
   console.log(__dirname);
-  console.log(path.join(__dirname, "../../correoDeConfirmacion.html"));
+  console.log(path.join(__dirname, "/correoDeConfirmacion.html"));
   const template = fs
-    .readFileSync(path.join(__dirname, "../../correoDeConfirmacion.html"), "utf8")
+    .readFileSync(path.join(__dirname, "/correoDeConfirmacion.html"), "utf8")
     .toString();
   const { correo } = req.body;
   try {
