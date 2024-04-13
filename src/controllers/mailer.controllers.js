@@ -15,7 +15,7 @@ export const enviarCorreo = async (req, res) => {
     const resultado = await transporter.sendMail({
       from: `AmbienteBohemio ${process.env.EMAIL}`,
       to: correo,
-      subject: "Prueba de mailer",
+      subject: "Registro Ambiente Bohemio",
       body: "Verificacion",
       html: template,
     });
