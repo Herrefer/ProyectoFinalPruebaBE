@@ -4,8 +4,6 @@ const pedidoSchema = new Schema({
   usuario: {
     type: String,
     required: true,
-    minLength: 8,
-    maxLength: 50,
   },
   monto: {
     type: Number,
