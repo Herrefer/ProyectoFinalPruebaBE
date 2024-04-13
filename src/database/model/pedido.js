@@ -21,6 +21,10 @@ const pedidoSchema = new Schema({
     type: Boolean,
     required: true,
   },
+  fecha: {
+    type: String,
+    require: true
+  }
 });
 
 const Pedido = mongoose.model('pedido', pedidoSchema);
