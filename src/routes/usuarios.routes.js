@@ -6,7 +6,7 @@ import validacionLogin from '../helpers/validacionDeLogin.js';
 
 const enrutador = Router();
 
-enrutador.route('/registro').post([validacionRegistro],crearUsuario);
+enrutador.route('/registro').post(crearUsuario);
 enrutador.route('/login').post([validacionLogin],login).get(leerUsuarios);
 
 export default enrutador;
