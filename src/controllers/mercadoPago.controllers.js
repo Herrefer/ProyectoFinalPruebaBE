@@ -1,7 +1,7 @@
 // SDK de Mercado Pago
 import { MercadoPagoConfig, Preference } from "mercadopago";
 // Agrega credenciales
-const client = new MercadoPagoConfig({ accessToken: process.env.TOKEN_MP });
+const client = new MercadoPagoConfig({ accessToken: "TEST-1578984294078740-041400-6b1364539e49cbc2e62863686f60ee7d-1768433921" });
 
 export const crearPreferenciaMP = async (req, res) => {
   try {
@@ -9,8 +9,8 @@ export const crearPreferenciaMP = async (req, res) => {
       items: [
         {
           title: req.body.title,
-          quantity: Number(req.body.quantity),
-          unit_price: Number(req.body.price),
+          quantity: 1,
+          unit_price: Number(req.body.unit_price),
           currency_id: "ARS",
         },
       ],
