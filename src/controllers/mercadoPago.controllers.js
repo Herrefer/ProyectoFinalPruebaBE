@@ -1,7 +1,9 @@
 // SDK de Mercado Pago
 import { MercadoPagoConfig, Preference } from "mercadopago";
 // Agrega credenciales
-const client = new MercadoPagoConfig({ accessToken: "TEST-1578984294078740-041400-6b1364539e49cbc2e62863686f60ee7d-1768433921" });
+const accessToken = process.env.TOKEN_MP;
+const publicKey = process.env.MP_TOKEN_ACCESS;
+const client = new MercadoPagoConfig({ accessToken });
 
 export const crearPreferenciaMP = async (req, res) => {
   try {
@@ -15,15 +17,17 @@ export const crearPreferenciaMP = async (req, res) => {
         },
       ],
       back_urls: {
-        success: "https://proyectofinalprueba.netlify.app/",
-        failure: "https://proyectofinalprueba.netlify.app/menu",
-        pending: "https://proyectofinalprueba.netlify.app/nosotros",
+        success: "https://ambiente-bohemio-restaurante.netlify.app/menu"
       },
     };
     const preference = new Preference(client);
     const result = await preference.create({body});
+    const preferenceID = result.id;
+    console.log(preferenceID)
     res.json({
-        id: result.id,
+        respuesta : result,
+        preferenceID: preferenceID,
+        publicKey: publicKey
     })
 
   } catch (error) {

@@ -3,7 +3,7 @@ import { crearPreferenciaMP } from "../controllers/mercadoPago.controllers.js";
 
 const enrutador = Router();
 
-enrutador.route('/crearorden').post(crearPreferenciaMP);
+enrutador.route('/create-order').post(crearPreferenciaMP);
 
 
 export default enrutador;
